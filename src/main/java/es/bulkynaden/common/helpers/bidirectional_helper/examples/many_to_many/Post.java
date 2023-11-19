@@ -1,19 +1,15 @@
 package es.bulkynaden.common.helpers.bidirectional_helper.examples.many_to_many;
 
 import es.bulkynaden.common.helpers.bidirectional_helper.BidirectionalHelper;
-import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NonNull;
-import lombok.ToString;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
 @Getter
-@ToString(of = {"comment"})
-@EqualsAndHashCode(of = {"comment"})
 public class Post {
-    private Collection<User> users;
-    private String comment;
+    private final Collection<User> users = new ArrayList<>();
 
     public void addUser(@NonNull User user) {
         BidirectionalHelper.linkManyToMany(this, user,
