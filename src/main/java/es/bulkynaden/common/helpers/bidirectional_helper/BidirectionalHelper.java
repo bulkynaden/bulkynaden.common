@@ -86,7 +86,7 @@ public final class BidirectionalHelper {
      * @throws NullPointerException if any of the non-nullable parameters are null.
      */
     public static <T, U> void linkOneToMany(
-            T entityOne, U entityTwo,
+            @NonNull T entityOne, @NonNull U entityTwo,
             BiConsumer<T, U> addInternalEntityTwoToOne,
             BiConsumer<T, U> removeInternalEntityTwoFromCurrentOne,
             Function<U, T> getCurrentEntityFromTwo,
@@ -107,7 +107,7 @@ public final class BidirectionalHelper {
      * @throws NullPointerException if any of the non-nullable parameters are null.
      */
     public static <T, U> void unlinkOneToMany(
-            T entityOne, U entityTwo,
+            @NonNull T entityOne, @NonNull U entityTwo,
             BiConsumer<T, U> removeInternalEntityTwoFromOne,
             BiConsumer<U, T> setInternalEntityTwoToOne) {
         ONE_TO_MANY_LINKER.unlink(entityOne, entityTwo, removeInternalEntityTwoFromOne, setInternalEntityTwoToOne);
@@ -129,7 +129,7 @@ public final class BidirectionalHelper {
      * @throws NullPointerException if any of the non-nullable parameters are null.
      */
     public static <T, U> void linkManyToOne(
-            T entityOne, U entityTwo,
+            @NonNull T entityOne, @NonNull U entityTwo,
             BiConsumer<U, T> addInternalEntityOneToTwo,
             BiConsumer<U, T> removeInternalEntityTwoFromCurrentOne,
             Function<T, U> getCurrentEntityTwoFromOne,
@@ -150,7 +150,7 @@ public final class BidirectionalHelper {
      * @throws NullPointerException if any of the non-nullable parameters are null.
      */
     public static <T, U> void unlinkManyToOne(
-            T entityOne, Function<T, U> getEntityTwoFromOne,
+            @NonNull T entityOne, Function<T, U> getEntityTwoFromOne,
             BiConsumer<U, T> removeInternalEntityOneFromTwo,
             BiConsumer<T, U> setInternalEntityTwoToOne) {
         MANY_TO_ONE_LINKER.unlink(entityOne, getEntityTwoFromOne, removeInternalEntityOneFromTwo, setInternalEntityTwoToOne);
@@ -169,7 +169,7 @@ public final class BidirectionalHelper {
      * @throws NullPointerException if any of the non-nullable parameters are null.
      */
     public static <T, U> void linkManyToMany(
-            T entityOne, U entityTwo,
+            @NonNull T entityOne, @NonNull U entityTwo,
             BiConsumer<T, U> addInternalEntityTwoToOne,
             BiConsumer<U, T> addInternalEntityOneToTwo) {
         MANY_TO_MANY_LINKER.link(entityOne, entityTwo, addInternalEntityTwoToOne, addInternalEntityOneToTwo);
@@ -188,7 +188,7 @@ public final class BidirectionalHelper {
      * @throws NullPointerException if any of the non-nullable parameters are null.
      */
     public static <T, U> void unlinkManyToMany(
-            T entityOne, U entityTwo,
+            @NonNull T entityOne, @NonNull U entityTwo,
             BiConsumer<T, U> removeInternalEntityTwoFromOne,
             BiConsumer<U, T> removeInternalEntityOneFromTwo) {
         MANY_TO_MANY_LINKER.unlink(entityOne, entityTwo, removeInternalEntityTwoFromOne, removeInternalEntityOneFromTwo);

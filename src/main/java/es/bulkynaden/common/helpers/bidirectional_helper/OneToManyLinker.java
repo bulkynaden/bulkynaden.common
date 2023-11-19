@@ -1,5 +1,7 @@
 package es.bulkynaden.common.helpers.bidirectional_helper;
 
+import lombok.NonNull;
+
 import java.util.function.BiConsumer;
 import java.util.function.Function;
 
@@ -34,7 +36,7 @@ public class OneToManyLinker {
      * @param setInternalEntityTwoToOne             A consumer that sets the link of entityTwo to entityOne.
      * @throws NullPointerException if any of the non-nullable parameters are null.
      */
-    public <T, U> void link(T entityOne, U entityTwo,
+    public <T, U> void link(@NonNull T entityOne, @NonNull U entityTwo,
                             BiConsumer<T, U> addInternalEntityTwoToOne,
                             BiConsumer<T, U> removeInternalEntityTwoFromCurrentOne,
                             Function<U, T> getCurrentEntityFromTwo,
@@ -61,7 +63,7 @@ public class OneToManyLinker {
      * @param setInternalEntityTwoToOne      A consumer that removes the link of entityTwo to entityOne.
      * @throws NullPointerException if any of the non-nullable parameters are null.
      */
-    public <T, U> void unlink(T entityOne, U entityTwo,
+    public <T, U> void unlink(@NonNull T entityOne, @NonNull U entityTwo,
                               BiConsumer<T, U> removeInternalEntityTwoFromOne,
                               BiConsumer<U, T> setInternalEntityTwoToOne) {
         removeInternalEntityTwoFromOne.accept(entityOne, entityTwo);
