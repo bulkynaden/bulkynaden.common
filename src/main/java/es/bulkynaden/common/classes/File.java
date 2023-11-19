@@ -1,12 +1,14 @@
 package es.bulkynaden.common.classes;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 /**
  * The File class represents a file with properties such as name, size, data, and type.
- * It implements the IFile interface.
+ * It implements the {@link IFile} interface.
  */
 @Data
+@EqualsAndHashCode(of = {"name", "size", "data", "type"})
 public class File implements IFile {
     /**
      * The name of the file.
