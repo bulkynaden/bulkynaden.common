@@ -1,4 +1,4 @@
-package es.bulkynaden.common.helpers.bidirectional_helper.name;
+package es.bulkynaden.common.helpers.name;
 
 public interface IName {
     String getName();
