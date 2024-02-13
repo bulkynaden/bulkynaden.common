@@ -4,7 +4,7 @@ import es.bulkynaden.common.classes.INameHolder;
 
 
 /**
- * The {@code IGeoCoordinates} interface extends the {@code INameHolder} and {@code ICoordinatesHolder}
+ * The {@code IGeoLocation} interface extends the {@code INameHolder} and {@code ICoordinatesHolder}
  * interfaces. It represents geographic coordinates consisting of a name and an instance of
  * {@code IGeographicCoordinates}.
  *
@@ -19,5 +19,5 @@ import es.bulkynaden.common.classes.INameHolder;
  * @see ICoordinatesHolder
  * @see IGeographicCoordinates
  */
-public interface IGeoCoordinates extends INameHolder, ICoordinatesHolder<IGeographicCoordinates> {
+public interface IGeoLocation extends INameHolder, ICityHolder, IAddressHolder, ICoordinatesHolder<IGeographicCoordinates> {
 }
