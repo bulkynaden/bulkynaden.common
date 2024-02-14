@@ -1,5 +1,7 @@
 package es.bulkynaden.common.classes.geo;
 
+import lombok.NonNull;
+
 import java.util.Collection;
 
 
@@ -30,12 +32,12 @@ public interface IAutonomousCommunityCollectionHolder {
      *
      * @param autonomousCommunity the autonomous community to be added
      */
-    void addAutonomousCommunity(IAutonomousCommunity autonomousCommunity);
+    void addAutonomousCommunity(@NonNull IAutonomousCommunity autonomousCommunity);
 
     /**
      * Removes the specified autonomous community from the collection.
      *
      * @param autonomousCommunity the autonomous community to be removed
      */
-    void removeAutonomousCommunity(IAutonomousCommunity autonomousCommunity);
+    void removeAutonomousCommunity(@NonNull IAutonomousCommunity autonomousCommunity);
 }
