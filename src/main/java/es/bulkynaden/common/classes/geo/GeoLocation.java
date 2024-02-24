@@ -1,7 +1,8 @@
 package es.bulkynaden.common.classes.geo;
 
-import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * The {@code GeoLocation} class holds details of a geographical location including its
@@ -20,11 +21,33 @@ import lombok.EqualsAndHashCode;
  * @see IGeoLocation
  * @see IGeographicCoordinates
  */
-@Data
 @EqualsAndHashCode(of = {"name", "address"})
+@Getter
+@Setter
 public class GeoLocation implements IGeoLocation {
     private String name;
     private String address;
     private ICity city;
     private IGeographicCoordinates coordinates;
+
+    @Override
+    public String toString() {
+        StringBuilder fullName = new StringBuilder();
+
+        if (!name.isBlank()) {
+            fullName.append(name)
+                    .append(" - ");
+        }
+
+        if (address != null) {
+            fullName.append(address)
+                    .append(", ");
+        }
+
+        if (city != null) {
+            fullName.append(city.getName());
+        }
+
+        return fullName.toString();
+    }
 }
