@@ -41,11 +41,12 @@ public class GeoLocation implements IGeoLocation {
 
         if (address != null) {
             fullName.append(address)
-                    .append(", ");
+                    .append(" (");
         }
 
         if (city != null) {
-            fullName.append(city.getName());
+            fullName.append(city.getName())
+                    .append(")");
         }
 
         return fullName.toString();
