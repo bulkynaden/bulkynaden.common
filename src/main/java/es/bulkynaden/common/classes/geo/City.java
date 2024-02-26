@@ -1,7 +1,7 @@
 package es.bulkynaden.common.classes.geo;
 
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * The {@code City} class represents a city object.
@@ -10,8 +10,8 @@ import lombok.EqualsAndHashCode;
  * This annotation generates getter and setter methods for all fields in the class,
  * as well as implementations for {@code equals()} and {@code hashCode()} methods based on the "name" field.
  */
-@Data
-@EqualsAndHashCode(of = "name")
+@Getter
+@Setter
 public class City implements ICity {
     private String name;
 }

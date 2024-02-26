@@ -1,6 +1,5 @@
 package es.bulkynaden.common.classes.geo;
 
-import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -21,7 +20,6 @@ import lombok.Setter;
  * @see IGeoLocation
  * @see IGeographicCoordinates
  */
-@EqualsAndHashCode(of = {"name", "address"})
 @Getter
 @Setter
 public class GeoLocation implements IGeoLocation {

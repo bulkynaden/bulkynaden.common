@@ -1,7 +1,7 @@
 package es.bulkynaden.common.classes.geo;
 
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
 
 
 /**
@@ -16,8 +16,8 @@ import lombok.EqualsAndHashCode;
  *
  * @see IGeographicCoordinates
  */
-@Data
-@EqualsAndHashCode(of = {"latitude", "longitude", "altitude"})
+@Getter
+@Setter
 public class GeographicCoordinates implements IGeographicCoordinates {
     private double latitude;
     private double longitude;
