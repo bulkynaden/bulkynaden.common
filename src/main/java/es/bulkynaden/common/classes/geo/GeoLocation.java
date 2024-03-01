@@ -27,7 +27,6 @@ import java.util.stream.Stream;
 @Getter
 @Setter
 public class GeoLocation implements IGeoLocation {
-    private String name;
     private String address;
     private ICity city;
     private IGeographicCoordinates coordinates;
@@ -61,16 +60,17 @@ public class GeoLocation implements IGeoLocation {
      */
     @Override
     public String toString() {
-        String initialPart = Stream.of(name, address)
-                .filter(s -> s != null && !s.isBlank())
-                .collect(Collectors.joining(" - "));
+        String addressPart = Optional.ofNullable(address)
+                .filter(s -> !s.isBlank())
+                .orElse("");
 
         String cityPart = Optional.ofNullable(city)
                 .map(ICity::getName)
                 .filter(cityName -> !cityName.isBlank())
-                .map(cityName -> " (" + cityName + ")")
                 .orElse("");
 
-        return initialPart + cityPart;
+        return Stream.of(addressPart, cityPart)
+                .filter(s -> !s.isEmpty())
+                .collect(Collectors.joining(", "));
     }
 }

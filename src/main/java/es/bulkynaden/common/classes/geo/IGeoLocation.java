@@ -19,5 +19,5 @@ import es.bulkynaden.common.classes.INameHolder;
  * @see ICoordinatesHolder
  * @see IGeographicCoordinates
  */
-public interface IGeoLocation extends INameHolder, ICityHolder, IAddressHolder, ICoordinatesHolder<IGeographicCoordinates> {
+public interface IGeoLocation extends ICityHolder, IAddressHolder, ICoordinatesHolder<IGeographicCoordinates> {
 }
